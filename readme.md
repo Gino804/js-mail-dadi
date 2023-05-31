@@ -39,10 +39,16 @@
 
 ### Gioco dei dadi
 
-1. Genero un numero casuale da 1 a 6 e lo salvo in una variabile come numero del giocatore
-2. Genero un numero casuale da 1 a 6 e lo salvo in una variabile come numero del computer
-3. Stabilisco chi ha fatto il punteggio più alto:
-   - **SE** il numero del giocatore è maggiore del numero del computer
-     - Stampo in console un messaggio di vittoria per il giocatore
-   - **ALTRIMENTI**
-     - Stampo in console un messaggio di vittoria per il computer
+1. Recupero gli elementi dal DOM
+
+- **QUANDO** l'utente clicca sul bottone
+  - Genero un numero casuale da 1 a 6 e lo salvo in una variabile come numero del giocatore
+  - Genero un numero casuale da 1 a 6 e lo salvo in una variabile come numero del computer
+  - Inserisco nel DOM le immagini relative ai punteggi ottenuti
+  - Creo una variabile che contiene il risultato, inizializzandola come "ha vinto la CPU"
+  - Stabilisco chi ha fatto il punteggio più alto:
+    - **SE** il numero del giocatore è maggiore del numero del computer
+      - Assegno alla variabile del risultato "ha vinto il giocatore"
+    - **ALTRIMENTI SE** il numero del giocatore è uguale al numero del computer
+      - Assegno alla variabile del risultato "pareggio"
+  - Stampo in pagina il risultato

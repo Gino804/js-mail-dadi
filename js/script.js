@@ -34,16 +34,45 @@ mailButton.addEventListener('click', function()
 
 // Gioco dei dadi
 
-// 1 - 2 - Genero casualmente i due numeri, quello dell'utente e quello del computer
+// 1 - Recupero gli elementi dal DOM
+const numbersPlaceholder = document.getElementById('numbers');
+console.log(numbersPlaceholder);
 
-const max = 6;
+const userNumberPlaceholder = document.getElementById('user-number');
+console.log(userNumberPlaceholder);
 
-const userNumber = Math.floor(Math.random() * max) + 1;
-const computerNumber = Math.floor(Math.random() * max) + 1;
+const computerNumberPlaceholder = document.getElementById('computer-number');
+console.log(computerNumberPlaceholder);
 
-console.log('Numero del giocatore:', userNumber);
-console.log('Numero del computer:', computerNumber);
+const dicesButton = document.getElementById('dices-start');
+console.log(dicesButton);
 
-// 3 - Stabilisco chi ha fatto il punteggio più alto
-if(userNumber > computerNumber) console.log('Ha vinto il giocatore');
-else console.log('Ha vinto la CPU');
+const resultPlaceholder = document.getElementById('dices-result');
+console.log(resultPlaceholder);
+
+dicesButton.addEventListener('click', function()
+{
+    // Genero i numeri casuali del giocatore e del computer
+    const max = 6;
+
+    const userNumber = Math.floor(Math.random() * max) + 1;
+    const computerNumber = Math.floor(Math.random() * max) + 1;
+
+    console.log('Numero del giocatore:', userNumber);
+    console.log('Numero del computer:', computerNumber);
+
+    // Inserisco nel DOM le immagini relative ai punteggi ottenuti
+    numbersPlaceholder.classList.remove('d-none');
+
+    userNumberPlaceholder.innerHTML = `<img src="img/dice-${userNumber}.png" />`
+    computerNumberPlaceholder.innerHTML = `<img src="img/dice-${computerNumber}.png" />`
+
+    // Stabilisco chi ha fatto il punteggio più alto
+    let result = 'Ha vinto la CPU!';
+
+    if(userNumber > computerNumber) result = 'Ha vinto il giocatore!';
+    else if(userNumber === computerNumber) result = "Pareggio";
+    
+    // Stampo in pagina il messaggio
+    resultPlaceholder.innerText = result;
+})
