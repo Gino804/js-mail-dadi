@@ -28,7 +28,7 @@
 
 1. Creo una lista di email con contenuto impostato da me
 2. Chiedo all'utente di inserire una mail
-3. Creo una variabile che contiene il messaggio da visualizzare, inizializzandola come "non puoi accedere"
+3. Creo una variabile che contiene il messaggio da visualizzare, inizializzandola come "mail errata"
 4. Controllo che la mail sia presente nella lista:
    - **FINTANTO CHE** il contatore è minore della lunghezza della lista
      - **SE** l'elemento corrente della lista corrisponde alla mail inserita
