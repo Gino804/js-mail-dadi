@@ -20,5 +20,21 @@ for(let i = 0; i < mails.length; i++)
     if(mails[i] === userMail) message = 'Benvenuto';
 }
 
-//5 Stampo in console il messaggio
+// 5 Stampo in console il messaggio
 console.log(message);
+
+// Gioco dei dadi
+
+// 1 - 2 - Genero casualmente i due numeri, quello dell'utente e quello del computer
+
+const max = 6;
+
+const userNumber = Math.floor(Math.random() * max) + 1;
+const computerNumber = Math.floor(Math.random() * max) + 1;
+
+console.log('Numero del giocatore:', userNumber);
+console.log('Numero del computer:', computerNumber);
+
+// 3 - Stabilisco chi ha fatto il punteggio più alto
+if(userNumber > computerNumber) console.log('Ha vinto il giocatore');
+else console.log('Ha vinto la CPU');
